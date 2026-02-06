@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine 💖</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    #yes {
+      background-color: #ff4d88;
+      color: white;
+    }
+
+    #no {
+      background-color: #ddd;
+      position: absolute;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="question">
+    <h1>Hey Honey, will you be my Valentine? 💕</h1>
+    <button id="yes" onclick="sayYes()">Yes 💖</button>
+    <button id="no" onmouseover="moveNo()">No 🙈</button>
+    <p style="font-size:12px;color:gray;">“No seems a bit shy 😜”</p>
+  </div>
+
+  <div class="card hidden" id="answer">
+    <h1>YAY!! 🎉💘</h1>
+    <p>You just made my day extra special 🥰<br>
+    Can’t wait to spend Valentine’s with you 💕</p>
+  </div>
+
+<script>
+  function moveNo() {
+    const noBtn = document.getElementById("no");
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  function sayYes() {
+    document.getElementById("question").classList.add("hidden");
+    document.getElementById("answer").classList.remove("hidden");
+  }
+</script>
+
+</body>
+</html>
